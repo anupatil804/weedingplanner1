@@ -1,0 +1,1 @@
+[data-popper-arrow]:before{visibility:visible;transform-origin:50%;content:"";z-index:-1;background:#fff;border-radius:2px;width:10px;height:10px;transition:transform .2s ease-out,visibility .2s ease-out;position:absolute;top:0;left:0;transform:translateY(-5px)rotate(45deg)}[data-popper-arrow]{z-index:-1;width:10px;height:10px;position:absolute}

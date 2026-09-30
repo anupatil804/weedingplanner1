@@ -1,0 +1,37 @@
+﻿<%@ WebHandler Language="C#" Class="ImageHandler" %>
+
+using System;
+using System.Data.SqlClient;
+using System.Web;
+
+public class ImageHandler : IHttpHandler
+{
+    public void ProcessRequest(HttpContext context)
+    {
+        string id = context.Request.QueryString["id"];
+        if (id == null) return;
+
+        string cs = @"Data Source=.\SQLEXPRESS;Initial Catalog=weedingdb;Integrated Security=True";
+
+        using (SqlConnection con = new SqlConnection(cs))
+        {
+            string query = "SELECT Artistphoto FROM Arti_reg WHERE Artist_id=@id";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            con.Open();
+            byte[] img = cmd.ExecuteScalar() as byte[];
+
+            if (img != null)
+            {
+                context.Response.ContentType = "image/jpeg";
+                context.Response.BinaryWrite(img);
+            }
+        }
+    }
+
+    public bool IsReusable
+    {
+        get { return false; }
+    }
+}

@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_master" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <title>Admin Panel</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff0f5;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #ff4d88, #ff99cc);
+            color: white;
+            padding: 18px;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #ff66a3;
+            position: fixed;
+            left: 0;
+            top: 60px;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar a:hover {
+            background: #ff3385;
+            border-left: 4px solid white;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 220px;
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+<form id="Form1" runat="server" enctype="multipart/form-data">
+
+    <div class="header">
+        💕 Wedding Planner - Admin Panel
+    </div>
+
+    <div class="sidebar">
+        <a href="adminpanel.aspx">🏠 Dashboard</a>
+        <a href="weedingtype.aspx">💍 Add Wedding Type</a>
+        <a href="addvenue.aspx">🏛 Add Venues</a>
+        <a href="addCeremony.aspx">🎉 Add Ceremony</a>
+        <a href="addCeremony.aspx">🎨 Add Artist</a>
+        <a href="LoginReport.aspx">👤 Login Report</a>
+        <a href="ArtistCategoryReport.aspx">🚪 Artists category</a>
+        <a href="VenueReport.aspx">🚪 Venue</a>
+        <a href="WishlistReport.aspx">🚪 wishlist</a>
+        <a href="FinalConfirmationReport.aspx">🚪 final confirmation</a>
+         <a href="FeedbackReport.aspx">Feedback</a>
+      
+
+        <a href="logout.aspx">🚪 Logout</a>
+
+    </div>
+
+    <div class="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+
+</form>
+</body>
+</html>

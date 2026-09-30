@@ -1,0 +1,1 @@
+.progress-animated[data-v-a4e278f1]{animation-name:progress-a4e278f1;animation-timing-function:linear;animation-fill-mode:forwards}.progress-static[data-v-a4e278f1]{width:0%}@keyframes progress-a4e278f1{0%{width:var(--startingPercentage)}to{width:100%}}
